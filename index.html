@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暖阳童行 - 关爱留守儿童公益平台</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft Yahei",sans-serif;}
+        :root{--main:#ff7d29;--light:#fff7ee;--dark:#333;--gray:#666;}
+        header{background:#fff;box-shadow:0 2px 8px #eee;position:sticky;top:0;z-index:99;}
+        .nav-wrap{width:1200px;max-width:95%;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:15px 0;flex-wrap:wrap;gap:15px;}
+        .logo{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:bold;color:var(--main);}
+        nav ul{display:flex;gap:35px;list-style:none;flex-wrap:wrap;}
+        nav a{text-decoration:none;color:var(--dark);font-size:16px;transition:0.3s;}
+        nav a:hover{color:var(--main);}
+        .donate-btn{background:var(--main);color:#fff;padding:10px 22px;border-radius:30px;border:none;cursor:pointer;font-size:16px;transition:0.3s;}
+        .donate-btn:hover{background:#e66c1f;}
+
+        /* 轮播横幅 */
+        .banner{height:480px;background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://img1.baidu.com/it/u=3241738113,3404023239&fm=253&fmt=auto&app=138&f=JPEG?w=1920&h=800') center/cover;display:flex;align-items:center;color:#fff;}
+        .banner-content{width:1200px;max-width:95%;margin:0 auto;}
+        .banner h1{font-size:48px;margin-bottom:18px;}
+        .banner p{font-size:20px;margin-bottom:30px;max-width:600px;line-height:1.8;}
+
+        .container{width:1200px;max-width:95%;margin:0 auto;padding:60px 0;}
+        .title{text-align:center;margin-bottom:50px;}
+        .title h2{font-size:32px;color:var(--dark);margin-bottom:12px;}
+        .title span{display:block;width:60px;height:4px;background:var(--main);margin:0 auto;}
+
+        /* 现状数据板块 */
+        .data-box{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;}
+        @media (max-width:992px){
+            .data-box{grid-template-columns:repeat(2,1fr);}
+        }
+        @media (max-width:576px){
+            .data-box{grid-template-columns:1fr;}
+        }
+        .data-item{background:var(--light);padding:35px 20px;text-align:center;border-radius:12px;}
+        .data-item h3{font-size:42px;color:var(--main);margin-bottom:10px;}
+        .data-item p{color:var(--gray);font-size:16px;}
+
+        /* 帮扶项目 新增图片样式 */
+        .project-box{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+        @media (max-width:992px){
+            .project-box{grid-template-columns:repeat(2,1fr);}
+        }
+        @media (max-width:576px){
+            .project-box{grid-template-columns:1fr;}
+        }
+        .project-card{border:1px solid #eee;border-radius:12px;overflow:hidden;transition:0.3s;}
+        .project-card:hover{transform:translateY(-8px);box-shadow:0 8px 20px #eee;}
+        .project-img{height:200px;width:100%;overflow:hidden;}
+        .project-img img{width:100%;height:100%;object-fit:cover;transition:0.5s;}
+        .project-card:hover .project-img img{transform:scale(1.08);}
+        .project-text{padding:22px;}
+        .project-text h4{font-size:20px;margin-bottom:10px;color:var(--dark);}
+        .project-text p{color:var(--gray);line-height:1.7;}
+
+        /* 爱心呼吁 */
+        .call{background:var(--light);padding:70px 0;text-align:center;margin:60px 0;}
+        .call h2{font-size:30px;margin-bottom:15px;}
+        .call p{max-width:800px;margin:0 auto 30px;color:var(--gray);line-height:1.8;font-size:17px;}
+
+        footer{background:#222;color:#aaa;padding:50px 0;}
+        .footer-wrap{width:1200px;max-width:95%;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+        @media (max-width:768px){
+            .footer-wrap{grid-template-columns:1fr;}
+        }
+        .footer-col h4{color:#fff;font-size:18px;margin-bottom:20px;}
+        .footer-col p, .footer-col li{line-height:2;list-style:none;}
+        .footer-col a{color:#aaa;text-decoration:none;}
+        .copyright{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #333;}
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="nav-wrap">
+            <div class="logo">
+                <span>☀</span>暖阳童行
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#about">项目介绍</a></li>
+                    <li><a href="#story">童心故事</a></li>
+                    <li><a href="#volunteer">志愿者招募</a></li>
+                    <li><a href="#news">新闻动态</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <button class="donate-btn">立即爱心捐助</button>
+        </div>
+    </header>
+
+    <!-- 首页横幅 -->
+    <section class="banner" id="home">
+        <div class="banner-content">
+            <h1>用爱填补留守空白，伴孩子温暖成长</h1>
+            <p>全国千万留守儿童缺少父母陪伴，我们搭建公益桥梁，提供助学、心理疏导、物资帮扶、乡村书屋等全方位守护，每一份善意都能照亮孩子的童年。</p>
+            <button class="donate-btn">加入爱心队伍</button>
+        </div>
+    </section>
+
+    <!-- 留守现状数据 -->
+    <section class="container">
+        <div class="title">
+            <h2>留守儿童现状数据</h2>
+            <span></span>
+        </div>
+        <div class="data-box">
+            <div class="data-item">
+                <h3>643万+</h3>
+                <p>全国农村留守儿童数量</p>
+            </div>
+            <div class="data-item">
+                <h3>42%</h3>
+                <p>缺乏心理关怀儿童占比</p>
+            </div>
+            <div class="data-item">
+                <h3>1200+</h3>
+                <p>合作帮扶乡村学校</p>
+            </div>
+            <div class="data-item">
+                <h3>8.6万</h3>
+                <p>累计受助儿童</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 帮扶项目（已补全对应实拍图片） -->
+    <section class="container" id="about">
+        <div class="title">
+            <h2>我们的帮扶项目</h2>
+            <span></span>
+        </div>
+        <div class="project-box">
+            <!-- 阳光助学计划 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://img0.baidu.com/it/u=1269252291,316338211&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="阳光助学计划">
+                </div>
+                <div class="project-text">
+                    <h4>阳光助学计划</h4>
+                    <p>为困难留守儿童提供学费、文具、校服补贴，保障孩子顺利完成义务教育，不让贫困阻断求学路。</p>
+                </div>
+            </div>
+            <!-- 暖心心理课堂 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://img2.baidu.com/it/u=2158963301,3790021132&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500" alt="暖心心理课堂">
+                </div>
+                <div class="project-text">
+                    <h4>暖心心理课堂</h4>
+                    <p>专业心理咨询师下乡开展疏导课程，开设亲情视频连线，缓解孩子孤独、自卑、思念情绪。</p>
+                </div>
+            </div>
+            <!-- 乡村书屋建设 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://img0.baidu.com/it/u=3801620333,2071304313&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500" alt="乡村书屋建设">
+                </div>
+                <div class="project-text">
+                    <h4>乡村书屋建设</h4>
+                    <p>向乡村小学捐赠课外书籍、益智玩具，搭建阅读空间，丰富留守儿童课余精神生活。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 爱心呼吁板块 -->
+    <section class="call">
+        <h2>一份微小善意，改变孩子一生</h2>
+        <p>远在他乡的父母无法时刻陪伴，老人无力兼顾教育，很多孩子缺少关爱、引导与温暖。你可以通过捐款、捐赠物资、线下支教、线上陪伴等方式参与帮扶，让每一位留守儿童都拥有完整快乐的童年。</p>
+        <button class="donate-btn">查看帮扶渠道</button>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="footer-wrap">
+            <div class="footer-col">
+                <h4>暖阳童行公益</h4>
+                <p>专注关爱农村留守儿童公益组织<br>民间非营利爱心平台</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <li><a href="#about">帮扶项目</a></li>
+                <li><a href="#volunteer">志愿者报名</a></li>
+                <li><a href="#donate">爱心捐赠</a></li>
+                <li><a href="#news">公益资讯</a></li>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <p>公益热线：400-888-6699</p>
+                <p>邮箱：lovechild@nanyang.org</p>
+                <p>地址：全国各乡村公益服务站</p>
+            </div>
+        </div>
+        <div class="copyright">©2026 暖阳童行 关爱留守儿童公益平台 版权所有</div>
+    </footer>
+</body>
+</html>
